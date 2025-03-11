@@ -6,11 +6,11 @@ namespace I2crm\Screening\Interpreter;
 
 use I2crm\Screening\Parser\LanguageParserInterface;
 
-final class Interpreter
+final readonly class Interpreter
 {
 
 
-    public function __construct(private readonly LanguageParserInterface $parser)
+    public function __construct(private LanguageParserInterface $parser)
     {
     }
 

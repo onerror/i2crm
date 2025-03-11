@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "I2crm\\Screening\\": "src/"
+            "I2crm\\Screening\\": "src/",
+            "I2crm\\Screening\\Tests\\": "tests/"
         }
     },
     "authors": [

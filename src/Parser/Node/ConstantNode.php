@@ -7,7 +7,7 @@ namespace I2crm\Screening\Parser\Node;
 // Узел константы: хранит числовое, строковое или булево значение
 final class ConstantNode extends Node
 {
-    private $value;
+    private mixed $value;
 
     public function __construct($value)
     {

@@ -27,6 +27,7 @@ final class FunctionRegistry
 
     public static function execute(string $name, array $params, array $args): mixed
     {
+        var_dump ($name, $params, $args);
         return self::getFunction($name)->execute($params, $args);
     }
 

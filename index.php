@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use I2crm\Screening\Interpreter\Exception\ParserException;
 use I2crm\Screening\Interpreter\Interpreter;
 
 require_once 'vendor/autoload.php';
@@ -18,6 +19,10 @@ $code = '(bk.action.string.JsonEncode,
 
 $interpreter =
     new Interpreter();
-
-$result = $interpreter->interpret($code, ['world']);
+try {
+    $result = $interpreter->interpret($code, ['world']);
+}catch (ParserException $e) {
+    echo "Ошибка: " . $e->getMessage() . "\n";
+    exit(1);
+}
 echo $result . "\n";  // Вывод: {"message":"Hello, world"}

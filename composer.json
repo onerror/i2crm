@@ -1,0 +1,24 @@
+{
+    "name": "i2crm/screening",
+    "description": "A screening task for a middle+ candidate",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "I2crm\\Screening\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Evgeny Pyastolov",
+            "email": "pyastolov@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require-dev": {
+        "phpunit/phpunit": "^12.0"
+    },
+  "require": {
+    "ext-ctype": "*"
+  }
+}

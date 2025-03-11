@@ -2,10 +2,7 @@
 
 declare(strict_types=1);
 
-namespace I2crm\Screening\Parser\Node;
-
-// Узел вызова функции: хранит имя функции и список параметров (AST-узлов)
-use I2crm\Screening\Interpreter\FunctionRegistry;
+namespace I2crm\Screening\Interpreter;
 
 final class FunctionNode extends Node
 {

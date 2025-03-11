@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use I2crm\Screening\Interpreter\Interpreter;
-use I2crm\Screening\Parser\Parser;
 
 require_once 'vendor/autoload.php';
 
@@ -17,9 +16,8 @@ $code = '(bk.action.string.JsonEncode,
     )
 )';
 
-$interpreter = new Interpreter(
-    new Parser(),
-);
+$interpreter =
+    new Interpreter();
 
 $result = $interpreter->interpret($code, ['world']);
 echo $result . "\n";  // Вывод: {"message":"Hello, world"}

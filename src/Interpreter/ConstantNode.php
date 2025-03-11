@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace I2crm\Screening\Parser\Node;
+namespace I2crm\Screening\Interpreter;
 
-// Узел константы: хранит числовое, строковое или булево значение
 final class ConstantNode extends Node
 {
     private mixed $value;

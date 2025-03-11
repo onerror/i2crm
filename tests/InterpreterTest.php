@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace I2crm\Screening\Tests;
 
 use I2crm\Screening\Interpreter\Interpreter;
-use I2crm\Screening\Parser\Parser;
 use PHPUnit\Framework\TestCase;
 
 class InterpreterTest extends TestCase
@@ -13,8 +12,7 @@ class InterpreterTest extends TestCase
 
     public function testInterpret(): void
     {
-        $service = new Interpreter(new Parser());
-        $result = $service->interpret(
+        $result = new Interpreter()->interpret(
             <<<'CODE'
 (bk.action.string.JsonEncode, 
     (bk.action.map.Make, 
@@ -27,7 +25,7 @@ class InterpreterTest extends TestCase
 CODE,
             ['world']
         );
-        $this->assertEquals(json_encode(['message' => 'Hello, world']),
+        $this->assertEquals(json_encode(['message' => 'Hello, world'], JSON_THROW_ON_ERROR),
             $result,
             'Вывод программы не совпадает с ожидаемым');
     }

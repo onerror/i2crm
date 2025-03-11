@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace I2crm\Screening\Parser\Exception;
+namespace I2crm\Screening\Interpreter\Exception;
 
 use Exception;
 

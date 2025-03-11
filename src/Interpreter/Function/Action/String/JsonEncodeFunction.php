@@ -19,7 +19,7 @@ class JsonEncodeFunction extends AbstractFunction
     /**
      * @throws InterpreterException
      */
-    public function execute(array $params): mixed
+    public function execute(array $params): string|false
     {
         $this->validateParamCount($params, 1);
         try {

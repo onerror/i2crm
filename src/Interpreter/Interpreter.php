@@ -31,7 +31,7 @@ final class Interpreter implements LanguageParserInterface
         if ($this->currentPosition < $this->length) {
             ParserException::wrongCharacters($this->currentPosition);
         }
-        return $expr->evaluate($args);
+        return $expr->evaluate();
     }
 
     private function skipWhitespace(): void
@@ -145,6 +145,7 @@ final class Interpreter implements LanguageParserInterface
             $literal .= $this->consume();
         }
         $literal = trim($literal);
+
         if ($literal === "true") {
             return new ConstantNode(true);
         }
@@ -191,7 +192,7 @@ final class Interpreter implements LanguageParserInterface
         $numStr = "";
         while ($this->currentPosition < $this->length) {
             $char = $this->current();
-            if (ctype_digit($char) || $char === '.') {
+            if ($char === '.' || ctype_digit($char)) {
                 $numStr .= $this->consume();
             } else {
                 break;

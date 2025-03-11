@@ -25,13 +25,7 @@ final class FunctionRegistry
         'bk.action.string.JsonEncode' => JsonEncodeFunction::class,
     ];
 
-    public static function execute(string $name, array $params, array $args): mixed
-    {
-        var_dump ($name, $params, $args);
-        return self::getFunction($name)->execute($params, $args);
-    }
-
-    private static function getFunction(string $name): FunctionInterface
+    public static function getFunction(string $name): FunctionInterface
     {
         if (!isset(self::FUNCTIONS[$name])) {
             throw new InvalidArgumentException(sprintf("Функция %s не найдена", $name));

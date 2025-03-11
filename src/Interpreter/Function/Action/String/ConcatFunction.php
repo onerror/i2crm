@@ -19,7 +19,7 @@ class ConcatFunction extends AbstractFunction
     /**
      * @throws InterpreterException
      */
-    public function execute(array $params, array $args): mixed
+    public function execute(array $params): mixed
     {
         $this->validateParamCount($params, 2);
         return $params[0] . $params[1];

@@ -18,13 +18,13 @@ final class FunctionNode extends Node
         $this->parameters = $parameters;
     }
 
-    public function evaluate(array $args)
+    public function evaluate()
     {
         $evaluatedParams = [];
         foreach ($this->parameters as $param) {
-            $evaluatedParams[] = $param->evaluate($args);
+            $evaluatedParams[] = $param->evaluate();
         }
 
-        return FunctionRegistry::execute($this->functionName, $evaluatedParams, $args);
+        return FunctionRegistry::getFunction($this->functionName)->execute($evaluatedParams);
     }
 }

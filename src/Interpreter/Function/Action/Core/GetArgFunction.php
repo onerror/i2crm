@@ -6,6 +6,7 @@ namespace I2crm\Screening\Interpreter\Function\Action\Core;
 
 use I2crm\Screening\Interpreter\Exception\InterpreterException;
 use I2crm\Screening\Interpreter\Function\AbstractFunction;
+use I2crm\Screening\Interpreter\GlobalState;
 
 class GetArgFunction extends AbstractFunction
 {
@@ -17,7 +18,7 @@ class GetArgFunction extends AbstractFunction
     /**
      * @throws InterpreterException
      */
-    public function execute(array $params, array $args): mixed
+    public function execute(array $params): mixed
     {
         $this->validateParamCount($params, 1);
         $index = $params[0];
@@ -26,6 +27,6 @@ class GetArgFunction extends AbstractFunction
             throw InterpreterException::incorrectParamType($this->getName(), 0);
         }
 
-        return $args[$index] ?? null;
+        return GlobalState::getArgument($index);
     }
 }

@@ -17,7 +17,7 @@ class MakeFunction extends AbstractFunction
     /**
      * @throws InterpreterException
      */
-    public function execute(array $params, array $args): mixed
+    public function execute(array $params): mixed
     {
         $this->validateParamCount($params, 2);
         [$keys, $values] = $params;

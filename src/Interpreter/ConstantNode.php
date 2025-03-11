@@ -13,7 +13,7 @@ final class ConstantNode extends Node
         $this->value = $value;
     }
 
-    public function evaluate($args)
+    public function evaluate()
     {
         return $this->value;
     }

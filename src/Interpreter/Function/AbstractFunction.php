@@ -11,7 +11,7 @@ abstract class AbstractFunction implements FunctionInterface
 {
     abstract public function getName(): string;
 
-    abstract public function execute(array $params, array $args): mixed;
+    abstract public function execute(array $params): mixed;
 
     /**
      * @throws InterpreterException

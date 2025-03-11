@@ -8,5 +8,5 @@ interface FunctionInterface
 {
     public function getName(): string;
 
-    public function execute(array $params, array $args): mixed;
+    public function execute(array $params): mixed;
 }

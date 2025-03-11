@@ -25,6 +25,7 @@ final class Interpreter implements LanguageParserInterface
         $this->currentPosition = 0;
         $this->length = strlen($code);
         $expr = $this->parseExpression();
+        GlobalState::setArguments($args);
 
         $this->skipWhitespace();
         if ($this->currentPosition < $this->length) {
